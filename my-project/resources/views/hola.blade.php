@@ -7,7 +7,7 @@
 </head>
 <body>
     <div class="row">
-        Hola Mundo
+        Bienvenido a mi Nueva ruta
     </div>
 </body>
 </html>
