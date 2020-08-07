@@ -29,11 +29,11 @@ Route::get('/hola', function () {
 // Rutas con filtros 
 
 Route::get("/usuarios",function (){
-    return "Crear nuevo usuario";
+    return "Crear nuevo usuarios";
 });
 
 Route::get("/usuarios/{id}", function ($id){
-    return "Crar usuario numero {$id}";
+    return "Crear usuario numero {$id}";
 })->where("id","[0-9]+");
 
 // Rutas con parametros opcionales 
