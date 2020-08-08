@@ -1,20 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Listado de Usuarios</title>
-</head>
-<body>
-  <h1>{{ $titulo }}</h1>
-  <hr>
+@extends('layout')
+
+@section('content')
     <ul>
     @foreach ($users as $user)
     <li>
       {{$user}}
-    </li>
+    </li> 
     @endforeach
     </ul>
     
-</body>
-</html>
+  <h2>{{$titulo}}</h2>
+    @if ( empty($contenido))
+      <p>No Hay contenido</p>
+    @endif
+  <p>{{$contenido}}</p>
+
+  <div class="row">
+    <div class="col-6">A</div>
+    <div class="col-6">B</div>
+  </div>
+  @include('boton')
+  @include('boton')
+  @include('boton')
+  @include('boton')
+    
+@endsection
