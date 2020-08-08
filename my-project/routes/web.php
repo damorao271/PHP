@@ -15,12 +15,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+    // return "Welcome"
 });
 
 
-Route::get('/hola', function () {
-    return view('hola');
-});
 
 // Route::get("/{user}/{id}",function($user, $id){
 //     return "Mi nombre es {$user} y mi id es ${id}";
@@ -28,20 +26,9 @@ Route::get('/hola', function () {
 
 // Rutas con filtros 
 
-Route::get("/usuarios",function (){
-    return "Crear nuevo usuarios";
-});
+Route::get("/usuarios","UserController@aplha");
 
-Route::get("/usuarios/{id}", function ($id){
-    return "Crear usuario numero {$id}";
-})->where("id","[0-9]+");
+Route::get("/usuarios/{id}","UserController@create")->where("id","[0-9]+");
 
 // Rutas con parametros opcionales 
-// Route::get("{user}/{id?}", function($user, $id = null) {
-//     if ($id) {
-//         return "Hola {$user} con id {$id}";
-//     }
-//     else {
-//         return "Bienvenido {$user} sin id"; 
-//     }
-// });
+Route::get("/saludo/{name}/{nickname?}", "UserController@saludo" );
