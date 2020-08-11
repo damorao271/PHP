@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use \App\Profession;
 
 class User extends Authenticatable
 {
@@ -46,5 +47,10 @@ class User extends Authenticatable
     public function isAdmin()
     {
         return $this->email === "adan@gmail.com";
+    }
+
+    public function profession()
+    {
+        return $this->belongsTo(Profession::class);
     }
 }
